@@ -9,7 +9,8 @@
 	 }
 	 $sql="select * from gguser where UserID='".$userName."'and PasswordMD5 ='".$password."'";
 	 $res=$mysqli->execute_dql($sql);
-	 echo $userName;
-	 echo $res->num_rows;
+	 if($res->num_rows>0){
+		 header('Location:index.html');
+	 }
 	 $res->free();
 ?>
